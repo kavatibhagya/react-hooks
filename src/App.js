@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -8,6 +8,14 @@ function App() {
      const handleClick = () => {
           setAge(age+1);
      }
+     useEffect(()=>{
+       setName({firstname:'ridhi',lastname:'dand'})
+     },[])
+     useEffect(()=>{
+       fetch("https://jsonplaceholder.typicode.com/albums")
+       .then(response =>console.log(response))
+       ;
+     })
      
 
   return (
